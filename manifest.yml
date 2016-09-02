@@ -1,6 +1,7 @@
 ---
 applications:
 - name: spring-boot-sample
+  host: spring-boot-sample-cloudfoundry
   memory: 512M
   instances: 1
 random-route: true
