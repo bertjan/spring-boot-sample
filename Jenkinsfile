@@ -1,6 +1,6 @@
 node {
     env.PATH = "${tool'maven-3.3.9'}/bin:${env.PATH}"
-    version = '1.0' +  ${env.BUILD_NUMBER}
+    version = '1.0' +  env.BUILD_NUMBER
     currentBuild.displayName = version
 
     git 'https://github.com/bertjan/spring-boot-sample'
