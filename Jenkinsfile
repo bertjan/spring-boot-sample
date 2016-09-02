@@ -15,6 +15,9 @@ node {
     sh 'mvn clean package'
 
     stage 'Deploy'
+
+    // Depends on the 'Credentials Binding Plugin'
+    // (https://wiki.jenkins-ci.org/display/JENKINS/Credentials+Binding+Plugin)
     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'cloudfoundry',
                       usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
         sh '''
