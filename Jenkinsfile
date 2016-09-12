@@ -4,11 +4,11 @@ node {
         version = '1.0.' + env.BUILD_NUMBER
         currentBuild.displayName = version
 
-        properties [
+        properties([
                 buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '10')),
                 [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/bertjan/spring-boot-sample/'],
                 pipelineTriggers([[$class: 'GitHubPushTrigger']])
-            ]
+            ])
     }
 
     stage('Checkout') {
