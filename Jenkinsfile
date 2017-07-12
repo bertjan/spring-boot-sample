@@ -29,18 +29,7 @@ node {
     }
 
     stage('Deploy') {
-        // Depends on the 'Credentials Binding Plugin'
-        // (https://wiki.jenkins-ci.org/display/JENKINS/Credentials+Binding+Plugin)
-        withCredentials([[$class          : 'UsernamePasswordMultiBinding', credentialsId: 'cloudfoundry',
-                          usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-            sh '''
-                curl -L "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar -zx
-
-                ./cf api https://api.run.pivotal.io
-                ./cf auth $USERNAME $PASSWORD
-                ./cf target -o bertjan-demo -s development
-                ./cf push
-               '''
-        }
+            sh 'java -jar ./target/spring-boot-sample.jar &'
     }
+
 }
