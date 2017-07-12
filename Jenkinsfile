@@ -29,7 +29,7 @@ node {
     }
 
     stage('Deploy') {
-            sh 'scripts/spring-boot-sample.sh'
+            sh 'sh scripts/spring-boot-sample.sh'
     }
 
 }
