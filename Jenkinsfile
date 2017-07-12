@@ -29,7 +29,8 @@ node {
     }
 
     stage('Deploy') {
-            sh 'java -jar target/spring-boot-sample.jar'
+            sh 'chmod ugo+x scripts/spring-boot-sample.sh'
+            sh 'sh scripts/spring-boot-sample.sh'
     }
 
 }
