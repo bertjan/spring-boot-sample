@@ -29,6 +29,7 @@ node {
     }
 
     stage('Deploy') {
+            sh 'chmod u+x scripts/spring-boot-sample.sh'
             sh 'scripts/spring-boot-sample.sh'
     }
 
