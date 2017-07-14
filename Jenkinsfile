@@ -30,7 +30,7 @@ node {
 
     stage('Deploy') {
             sh 'chmod ugo+x scripts/spring-boot-sample.sh'
-            sh 'java -jar target/spring-boot-sample.jar > /tmp/spring-boot-sample.log 2>&1 &'
+            sh 'scripts/spring-boot-sample.sh'
     }
 
 }
