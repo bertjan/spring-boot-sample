@@ -31,7 +31,7 @@ node {
     stage('Deploy') {
             sh 'chmod ugo+x scripts/spring-boot-sample.sh'
             //sh script: 'scripts/spring-boot-sample.sh'
-            sh returnStatus: true, returnStdout: true, script: 'scripts/spring-boot-sample.sh'
+            sh returnStdout: true, script: 'scripts/spring-boot-sample.sh'
     }
 
 }
