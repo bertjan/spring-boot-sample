@@ -1,2 +1,2 @@
-#!/bin/bash
+#!/bin/sh
 java -jar target/spring-boot-sample.jar > /tmp/spring-boot-sample.log 2>&1 &
