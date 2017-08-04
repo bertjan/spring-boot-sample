@@ -29,6 +29,7 @@ node(docker) {
     }
 
     stage('Deploy') {
+            env.PATH = "${tool 'jdk_1.8_131'}/bin:${env.PATH}"
             sh "chmod ugo+x scripts/spring-boot-sample.sh"
             //sh script: 'scripts/spring-boot-sample.sh'
             sh "scripts/spring-boot-sample.sh"
