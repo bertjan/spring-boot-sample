@@ -1,4 +1,4 @@
-node(docker) {
+node('docker') {
     stage('Configure') {
         env.PATH = "${tool 'maven-3.5.0'}/bin:${env.PATH}"
         version = '1.0.' + env.BUILD_NUMBER
