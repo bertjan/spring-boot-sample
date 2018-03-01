@@ -1,6 +1,6 @@
 node('MASTER') {
     stage('Configure') {
-        env.PATH = "${tool 'maven-3.5.0'}/bin:${env.PATH}"
+        env.PATH = "${tool 'maven'}/bin:${env.PATH}"
         version = '1.0.' + env.BUILD_NUMBER
         currentBuild.displayName = version
 
@@ -29,7 +29,7 @@ node('MASTER') {
     }
 
     stage('Deploy') {
-            env.PATH = "${tool 'jdk_1.8_131'}/bin:${env.PATH}"
+            env.PATH = "${tool 'JDK8'}/bin:${env.PATH}"
             sh "chmod ugo+x scripts/spring-boot-sample.sh"
             //sh script: 'scripts/spring-boot-sample.sh'
             sh "scripts/spring-boot-sample.sh"
