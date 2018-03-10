@@ -1,4 +1,5 @@
 node('MASTER') {
+    env.PATH = "${tool 'JDK8'}/bin:${env.PATH}"
     stage('Configure') {
         env.PATH = "${tool 'maven'}/bin:${env.PATH}"
         version = '1.0.' + env.BUILD_NUMBER
