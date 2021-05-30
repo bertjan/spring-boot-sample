@@ -24,10 +24,10 @@ pipeline {
             steps {
                 sh '''
                    echo "push docker image"
-                   docker login --username=erarunkumar --password=Oracle9i https://index.docker.io
-                   docker tag acquiredemo:v0.2 docker.io/acquiredemo/springbootsample:v0.2
+                   docker login --username=erarunkumar --password=Oracle9i
+                   docker tag acquiredemo:v0.2 erarunkumar/springbootsample:v0.2
                    docker images
-                   docker push docker.io/acquiredemo/springbootsample:v0.2                    
+                   docker push erarunkumar/springbootsample:v0.2                   
                    '''
             }
         }
@@ -35,8 +35,8 @@ pipeline {
             steps {
                 sh '''
                    echo "pull docker image"
-                   docker login --username=erarunkumar --password=Oracle9i https://index.docker.io
-                   docker pull acquiredemo/springbootsample:v0.2
+                   docker login --username=erarunkumar --password=Oracle9i
+                   docker pull erarunkumar/springbootsample:v0.2
                    '''
             }
         }
