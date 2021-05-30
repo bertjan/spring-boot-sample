@@ -3,6 +3,7 @@ pipeline {
     tools {
         maven 'maven3'
         jdk 'jdk8'
+        ansible 'ansible'
     }
     stages {
         stage('Build') {
