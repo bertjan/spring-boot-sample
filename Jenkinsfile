@@ -25,7 +25,8 @@ pipeline {
                 sh '''
                    echo "push docker image"
                    docker login --username=erarunkumar --password=Oracle9i https://index.docker.io
-                   docker tag acquiredemo:v0.2 acquiredemo/springbootsample:v0.2                    
+                   docker tag acquiredemo:v0.2 acquiredemo/springbootsample:v0.2
+                   docker push acquiredemo/springbootsample:v0.2                    
                    '''
             }
         }
