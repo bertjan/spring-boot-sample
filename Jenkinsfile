@@ -3,12 +3,14 @@ pipeline {
     tools {
         maven 'maven3'
         jdk 'jdk8'
-        ansible 'ansible'
     }
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                sh '''
+                   mvn clean package
+                   ansible --version
+                   '''
             }
         }
     }
