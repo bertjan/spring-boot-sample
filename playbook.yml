@@ -1,5 +1,5 @@
 ---
-- Name: deploy
+- name: deploy
   hosts: ldap
   gather_facts: yes
   become_user: root
