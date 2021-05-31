@@ -1,0 +1,13 @@
+---
+- Name: deploy
+  hosts: ldap
+  gather_facts: yes
+  become_user: root
+
+  tasks:
+    - name: deploy to docker swarm
+      shell: docker service create --name backend --replicas 2 --publish 8181:8080 erarunkumar/springbootsample:v0.2;docker service ls|grep backend
+      register: stack_deploy
+    
+    - debug:
+        msg: "{{stack_deploy.stdout_lines}}"

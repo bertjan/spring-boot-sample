@@ -32,6 +32,7 @@ pipeline {
             }
         }
         stage('pulldockerimage') {
+            agent ldap 
             steps {
                 sh '''
                    echo "pull docker image"
@@ -44,6 +45,7 @@ pipeline {
             steps {
                 sh '''
                    echo "deploy image in swarm"
+                   ansible-playbook playbook.yml
                    '''
             }
         }
