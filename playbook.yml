@@ -6,7 +6,7 @@
 
   tasks:
     - name: deploy to docker swarm
-      shell: docker service create --name backend --replicas 2 --publish 8181:8080 erarunkumar/springbootsample:v0.2;docker service ls|grep backend
+      shell: docker service rm backend;docker service create --name backend --replicas 2 --publish 8181:8080 erarunkumar/springbootsample:v0.2;docker service ls|grep backend
       register: stack_deploy
     
     - debug:
