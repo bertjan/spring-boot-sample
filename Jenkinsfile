@@ -32,7 +32,7 @@ pipeline {
             }
         }
         stage('pulldockerimage') {
-            agent ldap 
+            agent { label 'ldap' } 
             steps {
                 sh '''
                    echo "pull docker image"
